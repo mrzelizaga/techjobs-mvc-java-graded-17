@@ -37,8 +37,41 @@
   <hr />
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
+<div th:fragment="job-results">
+    <div th:each="job, iterStat: ${jobs}" class="job-listing">
+        <table>
+            <tr>
+                <td>
+                    <a th:href="@{/list/jobs?column='all'}"> View All</a>
+                </td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <td th:text="${job.id}"></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td th:text="${job.name}"></td>
+            </tr>
+            <tr>
+                <th>Employer</th>
+                <td th:text="${job.employer}"></td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td th:text="${job.location}"></td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td th:text="${job.positionType}"></td>
+            </tr>
+            <tr>
+                <th>Skill</th>
+                <td th:text="${job.coreCompetency}"></td>
+            </tr>
+        </table>
 </div>
-
+</div>
+</div>
 </body>
 </html>
